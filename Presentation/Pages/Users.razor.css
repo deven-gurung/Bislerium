@@ -1,0 +1,29 @@
+.table > :not(:last-child) > :last-child > * {
+  border-bottom-color: #edf5f9;
+}
+.table th {
+  background-color: #edf5f9;
+  color: #237c9a;
+  font-size: 16px;
+}
+.table td {
+  border-bottom: 1px solid #edf5f9;
+  font-weight: 500;
+  font-size: 16px;
+}
+.table > :not(caption) > * > * {
+  padding: 18px 12px;
+  vertical-align: middle;
+}
+.admin {
+  background-color: #dc3545;
+  border-radius: 4px;
+  padding: 4px 8px;
+  color: #fff;
+}
+.blogger {
+  background-color: #198754;
+  border-radius: 4px;
+  padding: 4px 8px;
+  color: #fff;
+}

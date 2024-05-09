@@ -1,0 +1,53 @@
+﻿@page "/profile"
+
+<PageTitle>About Me</PageTitle>
+
+<div class="userProfile inner-padding">
+    <div class="row">
+        <div class="col-12">
+            <div class="page-title-box">
+                <h3 class="page-title">My Profile</h3>
+            </div>
+        </div>
+    </div>
+    <form class="">
+        <div class="form-content">
+            <h5 class="fw-500">Please fill the form to update account details.</h5>
+            <div class="userProfile-grid row">
+                <div class="col-xxl-4 col-lg-5 col-md-5">
+                    <div class="user-image">
+                        <img src="images/svg/dummy.svg" alt="User Photo" height="130" width="130" />
+                        <span id="camera">
+                            <i class="uil uil-camera-change"></i>
+                        </span>
+                    </div>
+                    <div class="text-center">
+                    <p class="note my-3">You can upload a maximum image file size of 10 MB.</p>
+                    </div>
+                    <div class="mb-2">
+                        <h5 class="text-body">Role<span class="text-danger">*</span></h5>
+                        <p class="">Admin</p>
+                        </div>
+                    <div class="mb-3">
+                        <h5 class="text-body">Username<span class="text-danger">*</span></h5>
+                        <p class="">Siddhartha</p>
+                    </div>
+                     </div>
+                <div class="col-xxl-4 col-lg-6 col-md-7">
+                        <div class="mb-3">
+                        <label class="form-label" for="fullName">Full Name<span class="text-danger">*</span></label>
+                        <input type="text" class="form-control" id="fullName" placeholder="Enter your full name" required />
+                        </div>
+                        <div class="mb-3">
+                        <label class="form-label" for="email">Email Address<span class="text-danger">*</span></label>
+                        <input type="email" class="form-control" id="email" placeholder="Enter your email address" required />
+                        </div>
+                        <div class="mb-3">
+                        <label class="form-label" for="phoneNumber">Phone Number<span class="text-danger">*</span></label>
+                        <input type="tel" class="form-control" id="phoneNumber" placeholder="Enter your phone number" required />
+                        </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>

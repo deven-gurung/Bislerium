@@ -1,0 +1,30 @@
+.navbar {
+  box-shadow: 4px 4px 8px 0px rgba(0, 0, 0, 0.08);
+  position: sticky;
+  left: 0;
+  top: 0;
+  z-index: 10;
+}
+.navbar-brand {
+  font-size: clamp(42px, calc(2.625rem + ((1vw - 7.68px) * -1.3889)), 26px);
+  min-height: 0vw;
+  font-weight: 700;
+  color: #029b3c;
+}
+.navbar-nav .nav-link {
+  color: var(--text-muted);
+  font-size: 16px;
+  font-weight: 500;
+  padding-inline: 16px;
+}
+@media all and (max-width: 1400px) {
+  .navbar-nav .nav-link {
+    font-size: 14px;
+    padding-inline: 12px;
+  }
+}
+.navbar-nav .nav-link[aria-current="page"] {
+  color: #fff;
+  background-color: #029b3c;
+  border-radius: 8px;
+}

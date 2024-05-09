@@ -1,0 +1,387 @@
+﻿@page "/feeds"
+
+<PageTitle>Social Feeds</PageTitle>
+
+<div class="row">
+    <div class="col-xxl-3 col-lg-6 order-lg-1 order-xxl-1">
+        <div class="card">
+            <div class="card-body">
+                <div class="d-flex align-self-start">
+                    <img src="images/users/avatar-3.jpg" alt="User Photo" width="48" height="48" class="img-fluid rounded me-2" />
+                    <div class="w-100 overflow-hidden">
+                        <h5 class="mt-1 mb-0">ABC</h5>
+                        <p class="mb-1 mt-1 text-muted">Admin</p>
+                    </div>
+                </div>
+
+                <div class="list-group list-group-flush mt-2">
+                    <a href="javascript:void(0);"
+                        class="list-group-item list-group-item-action border-0"><i
+                            class="uil uil-images me-1"></i> About</a>
+                    <a href="javascript:void(0);" class="list-group-item list-group-item-action border-0"><i
+                            class="uil uil-comment-alt-message me-1"></i> My Profile</a>
+                    <a href="javascript:void(0);" class="list-group-item list-group-item-action border-0"><i
+                            class="uil uil-calendar-alt me-1"></i> Logout</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-xxl-9 col-lg-12 order-lg-2 order-xxl-1">
+        <!-- new post -->
+        <div class="card">
+            <div class="card-body p-2">
+                <ul class="nav nav-tabs nav-bordered" role="tablist">
+                    <li class="nav-item" role="presentation">
+                        <a href="#newpost" data-bs-toggle="tab" aria-expanded="false" class="nav-link active px-3 py-2"
+                            aria-selected="true" role="tab">
+                            <i class="mdi mdi-pencil-box-multiple font-18 d-md-none d-block"></i>
+                            <span class="d-none d-md-block">Create Post</span>
+                        </a>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <a href="#photo-video" data-bs-toggle="tab" aria-expanded="true" class="nav-link px-3 py-2"
+                            aria-selected="false" tabindex="-1" role="tab">
+                            <i class="mdi mdi-image font-18 d-md-none d-block"></i>
+                            <span class="d-none d-md-block">Photos/Videos</span>
+                        </a>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <a href="#story" data-bs-toggle="tab" aria-expanded="true" class="nav-link px-3 py-2"
+                            aria-selected="false" tabindex="-1" role="tab">
+                            <i class="mdi mdi-book-open-variant font-18 d-md-none d-block"></i>
+                            <span class="d-none d-md-block">Story</span>
+                        </a>
+                    </li>
+                </ul>
+                <!-- end nav-->
+                <div class="tab-content">
+                    <div class="tab-pane show active" id="newpost" role="tabpanel">
+                        <form action="#" class="comment-area-box">
+                            <textarea rows="4" class="form-control border-0 resize-none"
+                                placeholder="Write something...."></textarea>
+                            <div class="p-0 pt-2 d-flex justify-content-between align-items-center">
+                                <div>
+                                    <a href="#" class="btn btn-sm px-2 font-16 btn-light"><i
+                                            class="uil uil-scenery"></i></a>
+                                    <a href="#" class="btn btn-sm px-2 font-16 btn-light"><i
+                                            class="uil uil-location"></i></a>
+                                    <a href="#" class="btn btn-sm px-2 font-16 btn-light"><i
+                                            class="uil uil-paperclip"></i></a>
+                                </div>
+                                <button type="submit" class="btn btn-gradient px-2 py-1">
+                                    <i class="uil uil-message me-1"></i>Post
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="card">
+            <div class="card-body pb-1">
+                <div class="card-content">
+                    <div class="post no-image">
+                        <div class="post__content">
+                            <div class="top__section justify-content-between">
+                                <div class="d-flex align-items-center">
+                                    <div class="profile__img">
+                                        <img src="images/users/avatar-3.jpg" alt="User Photo" width="48" height="48"
+                                            class="img-fluid" />
+                                    </div>
+                                        <div class="profile__title">
+                                    <h3>John Doe</h3>
+                                    <span class="date text-muted">May 1 at 10:00 AM</span>
+                                    <span><i class="mdi mdi-music-note-whole"></i></span>
+                                    <span class="location text-muted my-0">Washinhton</span>
+                                </div>
+                                </div>
+                                <div class="dropdown float-end text-muted">
+                                    <a href="#" class="dropdown-toggle arrow-none card-drop" data-bs-toggle="dropdown"
+                                        aria-expanded="false">
+                                        <i class="mdi mdi-dots-horizontal"></i>
+                                    </a>
+                                    <div class="dropdown-menu dropdown-menu-end" style="">
+                                        <!-- item-->
+                                        <a href="javascript:void(0);" class="dropdown-item">Edit</a>
+                                        <!-- item-->
+                                        <a href="javascript:void(0);" class="dropdown-item">Delete</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="bottom__section">
+                                <article>
+                                    <div class="font-16 text-center text-dark my-3">
+                                        <i class="mdi mdi-format-quote-open font-20"></i> Leave one wolf alive and the
+                                        sheep are never safe. When people ask you
+                                        what happened here, tell them the North remembers. Tell them winter came for
+                                        House Frey.
+                                    </div>
+                                </article>
+                                <ul class="hashtags">
+                                    <li>#OnBrand</li>
+                                    <li>#event</li>
+                                    <li>#volunteers</li>
+                                    <li>#volunteering</li>
+                                    <li>#eventPlanner</li>
+                                    <li>#branding</li>
+                                    <li>#conference</li>
+                                </ul>
+                               
+                                <div class="mt-1 mb-1">
+                                    <a href="javascript: void(0);" class="btn btn-sm btn-link text-muted ps-0">
+                                        <i class="mdi mdi-arrow-up-bold text-muted"></i>
+                                        <i class="mdi mdi-arrow-up-bold-outline text-muted"></i>
+                                        1.2k Likes
+                                        <i class="mdi mdi-arrow-down-bold text-muted"></i>
+                                        <i class="mdi mdi-arrow-down-bold-outline text-muted"></i>
+                                    </a>
+                                    <a href="javascript: void(0);" class="btn btn-sm btn-link text-muted"><i
+                                            class="uil uil-comments-alt"></i> 148 Comments</a>
+                                    <a href="javascript: void(0);" class="btn btn-sm btn-link text-muted"><i
+                                            class="uil uil-share-alt"></i> Share</a>
+                                </div>
+                            </div>
+                            <hr class="m-0">
+                            <div class="mt-3">
+                                <div class="d-flex">
+                                    <img class="me-2 rounded" src="images/users/avatar-9.jpg"
+                                        alt="Generic placeholder image" height="32">
+                                    <div>
+                                        <h5 class="m-0">Sansa Stark </h5>
+                                        <p class="text-muted mb-0"><small>2 mins ago</small></p>
+
+                                        <p class="my-1">This is awesome! Proud of sis :) Waiting for you to
+                                            come back to winterfall</p>
+
+                                        <div>
+                                            <a href="javascript: void(0);" class="btn btn-sm btn-link text-muted p-0">
+                                                <i class="uil uil-heart me-1"></i> Like
+                                            </a>
+                                            <a href="javascript: void(0);"
+                                                class="btn btn-sm btn-link text-muted p-0 ps-2">
+                                                <i class="uil uil-comments-alt me-1"></i> Reply
+                                            </a>
+                                        </div>
+
+                                        <div class="d-flex mt-3">
+                                            <img class="me-2 rounded" src="images/users/avatar-8.jpg"
+                                                alt="Generic placeholder image" height="32">
+                                            <div>
+                                                <h5 class="m-0">Cersei Lannister </h5>
+                                                <p class="text-muted mb-0"><small>1 min ago</small></p>
+
+                                                <p class="my-1">I swear! She won't be able to reach to winterfall</p>
+                                            </div>
+                                        </div> <!-- end d-flex-->
+                                    </div> <!-- end div -->
+                                </div> <!-- end d-flex-->
+
+                                <hr>
+
+                                <div class="d-flex mb-2">
+                                    <img src="images/users/avatar-1.jpg" height="32"
+                                        class="align-self-start rounded me-2" alt="Arya Stark">
+                                    <div class="w-100">
+                                        <input type="text" class="form-control border-0 form-control-sm"
+                                            placeholder="Write a comment">
+                                    </div> <!-- end w-100 -->
+                                </div> <!-- end d-flex -->
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="post">
+                        <div class="post__image">
+                            <img src="images/small/small-2.jpg" alt="post-img" class="img-fluid">
+                            <div class="social__media_icon">
+                                <i class="fab fa-twitter"> </i>
+                            </div>
+                        </div>
+                        <div class="post__content">
+                            <div class="top__section justify-content-between">
+                                <div class="d-flex align-items-center">
+                                    <div class="profile__img">
+                                        <img src="images/users/avatar-3.jpg" alt="User Photo" width="48" height="48"
+                                            class="img-fluid" />
+                                    </div>
+                                    <div class="profile__title">
+                                    <h3>John Doe</h3>
+                                    <span class="date text-muted">40m ago</span>
+                                    <span><i class="mdi mdi-music-note-whole"></i></span>
+                                    <span class="location text-muted my-0">Washinhton</span>
+                                </div>
+                                </div>
+                                <div class="dropdown float-end text-muted">
+                                    <a href="#" class="dropdown-toggle arrow-none card-drop" data-bs-toggle="dropdown"
+                                        aria-expanded="false">
+                                        <i class="mdi mdi-dots-horizontal"></i>
+                                    </a>
+                                    <div class="dropdown-menu dropdown-menu-end" style="">
+                                        <!-- item-->
+                                        <a href="javascript:void(0);" class="dropdown-item">Edit</a>
+                                        <!-- item-->
+                                        <a href="javascript:void(0);" class="dropdown-item">Delete</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="bottom__section">
+                                <article>
+                                    Multilayer Fashion Women Lady Alloy Clavicle Choker
+                                    Necklace Charm Chain Jewelry ( 6953 Watch Count )
+                                </article>
+                                <ul class="hashtags">
+                                    <li>#Multilayer</li>
+                                    <li>#Fashion</li>
+                                    <li>#Women</li>
+                                </ul>
+                                
+                                <div class="mt-1 mb-1">
+                                    <a href="javascript: void(0);" class="btn btn-sm btn-link text-muted ps-0">
+                                        <i class="mdi mdi-arrow-up-bold text-muted"></i>
+                                        <i class="mdi mdi-arrow-up-bold-outline text-muted"></i>
+                                        1.2k Likes
+                                        <i class="mdi mdi-arrow-down-bold text-muted"></i>
+                                        <i class="mdi mdi-arrow-down-bold-outline text-muted"></i>
+                                    </a>
+                                    <a href="javascript: void(0);" class="btn btn-sm btn-link text-muted"><i
+                                            class="uil uil-comments-alt"></i> 148 Comments</a>
+                                    <a href="javascript: void(0);" class="btn btn-sm btn-link text-muted"><i
+                                            class="uil uil-share-alt"></i> Share</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="post">
+                        <div class="post__image">
+                            <img src="images/small/small-2.jpg" alt="post-img" class="img-fluid">
+                            <div class="social__media_icon">
+                                <i class="fab fa-instagram"> </i>
+                            </div>
+                        </div>
+                        <div class="post__content">
+                            <div class="top__section justify-content-between">
+                                <div class="d-flex align-items-center">
+                                    <div class="profile__img">
+                                        <img src="images/users/avatar-3.jpg" alt="User Photo" width="48" height="48"
+                                            class="img-fluid" />
+                                    </div>
+                                    <div class="profile__title">
+                                    <h3>John Doe</h3>
+                                    <span class="date text-muted">about an hour ago</span>
+                                    <span><i class="mdi mdi-music-note-whole"></i></span>
+                                    <span class="location text-muted my-0">Washinhton</span>
+                                </div>
+                                </div>
+                                <div class="dropdown float-end text-muted">
+                                    <a href="#" class="dropdown-toggle arrow-none card-drop" data-bs-toggle="dropdown"
+                                        aria-expanded="false">
+                                        <i class="mdi mdi-dots-horizontal"></i>
+                                    </a>
+                                    <div class="dropdown-menu dropdown-menu-end" style="">
+                                        <!-- item-->
+                                        <a href="javascript:void(0);" class="dropdown-item">Edit</a>
+                                        <!-- item-->
+                                        <a href="javascript:void(0);" class="dropdown-item">Delete</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="bottom__section">
+                                <article>Good morning world!! 💪💪</article>
+                                <ul class="hashtags">
+                                    <li>#mercedes</li>
+                                    <li>#bodykit</li>
+                                    <li>#performance</li>
+                                    <li>#atarius</li>
+                                    <li>#atariusconcept</li>
+                                </ul>
+                                
+                                <div class="mt-1 mb-1">
+                                    <a href="javascript: void(0);" class="btn btn-sm btn-link text-muted ps-0">
+                                        <i class="mdi mdi-arrow-up-bold text-muted"></i>
+                                        <i class="mdi mdi-arrow-up-bold-outline text-muted"></i>
+                                        1.2k Likes
+                                        <i class="mdi mdi-arrow-down-bold text-muted"></i>
+                                        <i class="mdi mdi-arrow-down-bold-outline text-muted"></i>
+                                    </a>
+                                    <a href="javascript: void(0);" class="btn btn-sm btn-link text-muted"><i
+                                            class="uil uil-comments-alt"></i> 148 Comments</a>
+                                    <a href="javascript: void(0);" class="btn btn-sm btn-link text-muted"><i
+                                            class="uil uil-share-alt"></i> Share</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="post">
+                        <div class="post__image">
+                            <img src="images/small/small-2.jpg" alt="post-img" class="img-fluid">
+                            <div class="social__media_icon">
+                                <i class="fab fa-facebook-f"> </i>
+                            </div>
+                        </div>
+                        <div class="post__content">
+                            <div class="top__section justify-content-between">
+                                <div class="d-flex align-items-center">
+                                    <div class="profile__img">
+                                        <img src="images/users/avatar-3.jpg" alt="User Photo" width="48" height="48"
+                                            class="img-fluid" />
+                                    </div>
+                                    <div class="profile__title">
+                                    <h3>John Doe</h3>
+                                    <span class="date text-muted">1mo ago</span>
+                                    <span><i class="mdi mdi-music-note-whole"></i></span>
+                                    <span class="location text-muted my-0">Washinhton</span>
+                                </div>
+                                </div>
+                                <div class="dropdown float-end text-muted">
+                                    <a href="#" class="dropdown-toggle arrow-none card-drop" data-bs-toggle="dropdown"
+                                        aria-expanded="false">
+                                        <i class="mdi mdi-dots-horizontal"></i>
+                                    </a>
+                                    <div class="dropdown-menu dropdown-menu-end" style="">
+                                        <!-- item-->
+                                        <a href="javascript:void(0);" class="dropdown-item">Edit</a>
+                                        <!-- item-->
+                                        <a href="javascript:void(0);" class="dropdown-item">Delete</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="bottom__section">
+                                <article>Yes or No ⁉️</article>
+                                <ul class="hashtags">
+                                    <li>#mensstyle</li>
+                                    <li>#modamasculina</li>
+                                    <li>#menwithstyle</li>
+                                    <li>#zaraman</li>
+                                    <li>#fashionmenswear</li>
+                                    <li>#casual</li>
+                                    <li>#mensweardaily</li>
+                                </ul>
+                                
+                                <div class="mt-1 mb-1">
+                                    <a href="javascript: void(0);" class="btn btn-sm btn-link text-muted ps-0">
+                                        <i class="mdi mdi-arrow-up-bold text-muted"></i>
+                                        <i class="mdi mdi-arrow-up-bold-outline text-muted"></i>
+                                        1.2k Likes
+                                        <i class="mdi mdi-arrow-down-bold text-muted"></i>
+                                        <i class="mdi mdi-arrow-down-bold-outline text-muted"></i>
+                                    </a>
+                                    <a href="javascript: void(0);" class="btn btn-sm btn-link text-muted"><i
+                                            class="uil uil-comments-alt"></i> 148 Comments</a>
+                                    <a href="javascript: void(0);" class="btn btn-sm btn-link text-muted"><i
+                                            class="uil uil-share-alt"></i> Share</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="text-center mb-3">
+            <a href="javascript:void(0);" class="text-danger"><i class="mdi mdi-spin mdi-loading me-1 font-16"></i>
+                Load more
+            </a>
+        </div>
+    </div>
+</div>

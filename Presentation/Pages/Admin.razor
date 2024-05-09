@@ -1,0 +1,130 @@
+﻿@page "/admin"
+
+<PageTitle>Admin Registrations</PageTitle>
+
+<div class="auth-fluid">
+        <div class="auth-fluid-right p-0">
+            <img src="images/bg-auth.jpg" alt="Cover Image" class="w-100 h-100 img-fluid">
+        </div>
+        <div class="auth-fluid-form-box">
+            <div class="card-body d-flex flex-column h-100 gap-3">
+
+                <div class="auth-brand text-center">
+                    <a href="index.html" class="logo-dark"> Bislerium </a>
+                    <a href="index.html" class="logo-light"> Bislerium </a>
+                </div>
+
+                <div class="my-auto">
+                    <div class="text-center w-75 m-auto">
+                        <h4 class="text-dark-50 text-center mt-0 fw-bold">
+                            Free Sign Up
+                        </h4>
+                        <p class="text-muted mb-4">
+                            Don't have an account? Create your account, it takes less than a
+                            minute
+                        </p>
+                    </div>
+
+                    <form action="#" class="register__form custom-form">
+                        <div class="row">
+                            <div class="mb-3 col-12">
+                                <div class="form-floating mb-0">
+                                    <input type="text" class="form-control" id="fullName"
+                                        placeholder="name@example.com" />
+                                    <label for="fullName">Full Name</label>
+                                </div>
+                            </div>
+
+                            <div class="mb-3 col-12">
+                                <div class="form-floating mb-0">
+                                    <input type="text" class="form-control" id="userName"
+                                        placeholder="name@example.com" />
+                                    <label for="userName">User Name</label>
+                                </div>
+                            </div>
+
+                            <div class="mb-3 col-12">
+                                <div class="form-floating mb-0">
+                                    <input type="email" class="form-control" id="floatingInput"
+                                        placeholder="name@example.com" />
+                                    <label for="floatingInput">Email address</label>
+                                </div>
+                            </div>
+
+                            <div class="mb-3 col-12">
+                                <div class="form-floating mb-0">
+                                    <input type="tel" class="form-control" id="phoneNumber"
+                                        placeholder="name@example.com" />
+                                    <label for="phoneNumber">Phone NUmber</label>
+                                </div>
+                            </div>
+
+                            <div class="mb-3 col-12">
+                                <div class="form-floating mb-0 input-group">
+                                    <input type="password" class="form-control" id="floatingPassword"
+                                        placeholder="Password" />
+                                    <label for="floatingPassword">Password</label>
+                                    <i class="uil uil-eye"></i>
+                                </div>
+                            </div>
+
+                            <div class="mb-3 col-12">
+                                <div class="form-floating mb-0 file-upload">
+                                    <label for="fileUpload">
+                                        Upload Image
+                                    </label>
+                                    <input type="file" id="fileUpload" class="form-control" />
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <div class="form-check">
+                                    <input type="checkbox" class="form-check-input float-start" id="checkbox-signup" />
+                                    <label class="form-check-label" for="checkbox-signup">I accept
+                                        <a href="#" class="text-muted">Terms and Conditions</a></label>
+                                </div>
+                            </div>
+
+                            <div class="mb-3 text-center">
+                                <button class="btn btn-gradient w-100" type="submit">
+                                    Sign Up
+                                </button>
+                            </div>
+
+                            <div class="text-center">
+                                <p class="text-muted font-16">Sign up using</p>
+                                <ul class="social-list list-inline mt-3">
+                                    <li class="list-inline-item">
+                                        <a href="javascript: void(0);"
+                                            class="social-list-item border-primary text-primary"><i
+                                                class="mdi mdi-facebook"></i></a>
+                                    </li>
+                                    <li class="list-inline-item">
+                                        <a href="javascript: void(0);"
+                                            class="social-list-item border-danger text-danger"><i
+                                                class="mdi mdi-google"></i></a>
+                                    </li>
+                                    <li class="list-inline-item">
+                                        <a href="javascript: void(0);" class="social-list-item border-info text-info"><i
+                                                class="mdi mdi-twitter"></i></a>
+                                    </li>
+                                    <li class="list-inline-item">
+                                        <a href="javascript: void(0);"
+                                            class="social-list-item border-secondary text-secondary"><i
+                                                class="mdi mdi-github"></i></a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+                <footer class="footer footer-alt">
+                    <p class="text-muted">
+                        Already have account?
+                        <a href="login" class="text-muted ms-1"><b>Log In</b></a>
+                    </p>
+                </footer>
+
+            </div>
+        </div>
+    </div>
