@@ -82,7 +82,7 @@ public class HomeService(IUserService userService, ApplicationDbContext dbContex
                     IsDownVotedByUser = dbContext.Reactions.Where(z => z.BlogId == blog.Id && z.IsReactedForComment && x.IsActive).Any(z => z.ReactionId == 2 && z.CreatedBy == user.Id),
                     CommentId = x.Id,
                     CommentedBy = dbContext.Users.Find(x.CreatedBy)!.Name,
-                    ImageUrl = dbContext.Users.Find(x.CreatedBy)!.ImageURL ?? "sample-profile.png",
+                    ImageUrl = dbContext.Users.Find(x.CreatedBy)!.ImageURL ?? "dummy.svg",
                     IsUpdated = x.LastModifiedAt != null,
                     CommentedTimePeriod = DateTime.Now.Hour - x.CreatedAt.Hour < 24 ? $"{(int)(DateTime.Now - x.CreatedAt).TotalHours} hours ago" : x.CreatedAt.ToString("dd-MM-yyyy HH:mm"),
                 }).Take(1).ToList()
@@ -148,7 +148,7 @@ public class HomeService(IUserService userService, ApplicationDbContext dbContex
                     IsDownVotedByUser = dbContext.Reactions.Where(z => z.BlogId == blog.Id && z.IsReactedForComment && x.IsActive).Any(z => z.ReactionId == 2 && z.CreatedBy == user.Id),
                     CommentId = x.Id,
                     CommentedBy = dbContext.Users.Find(x.CreatedBy)!.Name,
-                    ImageUrl = dbContext.Users.Find(x.CreatedBy)!.ImageURL ?? "sample-profile.png",
+                    ImageUrl = dbContext.Users.Find(x.CreatedBy)!.ImageURL ?? "dummy.svg",
                     IsUpdated = x.LastModifiedAt != null,
                     CommentedTimePeriod = DateTime.Now.Hour - x.CreatedAt.Hour < 24 ? $"{(int)(DateTime.Now - x.CreatedAt).TotalHours} hours ago" : x.CreatedAt.ToString("dd-MM-yyyy HH:mm"),
                 }).Take(1).ToList()
@@ -393,7 +393,7 @@ public class HomeService(IUserService userService, ApplicationDbContext dbContex
                         IsDownVotedByUser = dbContext.Reactions.Where(z => z.BlogId == blogId && z.IsReactedForComment).Any(z => z.ReactionId == 2 && z.CreatedBy == user.Id && z.CommentId == x.Id),
                         CommentId = x.Id,
                         CommentedBy = dbContext.Users.Find(x.CreatedBy)!.Name,
-                        ImageUrl = dbContext.Users.Find(x.CreatedBy)!.ImageURL ?? "sample-profile.png",
+                        ImageUrl = dbContext.Users.Find(x.CreatedBy)!.ImageURL ?? "dummy.svg",
                         IsUpdated = x.LastModifiedAt != null,
                         CommentedTimePeriod = DateTime.Now.Hour - x.CreatedAt.Hour < 24 ? $"{(int)(DateTime.Now - x.CreatedAt).TotalHours} hours ago" : x.CreatedAt.ToString("dd-MM-yyyy HH:mm"),
                         Comments = GetCommentsRecursive(blogId, true, false, x.Id)

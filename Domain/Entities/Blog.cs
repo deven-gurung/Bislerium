@@ -12,5 +12,5 @@ public class Blog : BaseEntity<Guid>
     
     public string Reaction { get; set; }           
     
-    public virtual ICollection<BlogImage> BlogImages { get; set; }
+    public virtual ICollection<BlogImage>? BlogImages { get; set; }
 }

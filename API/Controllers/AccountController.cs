@@ -86,6 +86,7 @@ public class AccountController(IAccountService accountService, IOptions<JWTSetti
             EmailAddress = user.Email ?? "",
             RoleId = role.Id,
             Role = role.Name ?? "",
+            ImageUrl = user.ImageURL ?? "dummy.svg",
             Token = new JwtSecurityTokenHandler().WriteToken(accessToken)
         };
 

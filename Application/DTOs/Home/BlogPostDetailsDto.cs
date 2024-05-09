@@ -4,6 +4,16 @@ public class BlogPostDetailsDto : UserActions
 {
     public Guid BlogId { get; set; }
     
+    public string BloggerName { get; set; }
+    
+    public string BloggerImage { get; set; }
+
+    public string Location { get; set; }
+
+    public string Reaction { get; set; }
+    
+    public int CommentCount { get; set; }
+    
     public string Title { get; set; }
     
     public string Body { get; set; }

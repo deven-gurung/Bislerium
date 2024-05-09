@@ -16,5 +16,5 @@ public class ProfileDetailsDto
     
     public string EmailAddress { get; set; }
     
-    public string ImageURL { get; set; }
+    public string? ImageURL { get; set; }
 }

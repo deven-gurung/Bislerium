@@ -12,5 +12,5 @@ public class RegisterDto
     
     public string MobileNumber { get; set; }
     
-    public string ImageURL { get; set; }
+    public string? ImageURL { get; set; }
 }

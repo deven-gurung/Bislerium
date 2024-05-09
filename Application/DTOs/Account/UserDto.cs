@@ -8,6 +8,8 @@ public class UserDto
     
     public string Username { get; set; }
     
+    public string ImageUrl { get; set; }
+
     public Guid RoleId { get; set; }
     
     public string Role { get; set; }

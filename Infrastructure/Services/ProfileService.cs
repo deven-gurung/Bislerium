@@ -29,7 +29,7 @@ public class ProfileService(IUserService userService, IEmailService emailService
             EmailAddress = user.Email ?? "",
             RoleId = role!.Id,
             RoleName = role.Name ?? "",
-            ImageURL = user.ImageURL ?? "sample-profile.png",
+            ImageURL = user.ImageURL ?? "dummy.svg",
             MobileNumber = user.PhoneNumber ?? ""
         };
         
@@ -42,6 +42,7 @@ public class ProfileService(IUserService userService, IEmailService emailService
 
         user!.Name = profileDetails.FullName;
         user.PhoneNumber = profileDetails.MobileNumber;
+        user.Email = profileDetails.EmailAddress;
 
         dbContext.Update(user);
 

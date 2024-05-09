@@ -20,7 +20,7 @@ public class BlogService(ApplicationDbContext dbContext, IUserService userServic
             Body = blog.Body,
             Location = blog.Location,
             Reaction = blog.Reaction,
-            BlogImages = blog.Images.Select(x => new BlogImage()
+            BlogImages = blog.Images?.Select(x => new BlogImage()
             {
                 ImageURL = x,
                 IsActive = true,

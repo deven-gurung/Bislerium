@@ -1,5 +1,6 @@
 ﻿using System.Net;
 using Application.DTOs.Home;
+using Application.DTOs.Reaction;
 using Application.Interfaces;
 using Application.Interfaces.Base;
 using Application.Utilities;
@@ -100,9 +101,9 @@ public class HomeController(IHomeService homeService) : Controller
     }
 
     [HttpPost("upvote-downvote-blog")]
-    public IActionResult UpVoteDownVoteBlog(Guid blogId, int reactionId)
+    public IActionResult UpVoteDownVoteBlog(ReactionActionDto reactionModel)
     {
-        var result = homeService.UpVoteDownVoteBlog(blogId, reactionId);
+        var result = homeService.UpVoteDownVoteBlog(reactionModel.BlogId ?? Guid.NewGuid(), reactionModel.ReactionId ?? 1);
 
         return Ok(new ResponseDto<object>()
         {
@@ -115,9 +116,9 @@ public class HomeController(IHomeService homeService) : Controller
     }
 
     [HttpPost("upvote-downvote-comment")]
-    public IActionResult UpVoteDownVoteComment(Guid commentId, int reactionId)
+    public IActionResult UpVoteDownVoteComment(ReactionActionDto reactionModel)
     {
-        var result = homeService.UpVoteDownVoteComment(commentId, reactionId);
+        var result = homeService.UpVoteDownVoteComment(reactionModel.CommentId ?? Guid.NewGuid(), reactionModel.ReactionId ?? 0);
 
         return Ok(new ResponseDto<object>()
         {
@@ -130,9 +131,9 @@ public class HomeController(IHomeService homeService) : Controller
     }
 
     [HttpPost("comment-for-blog")]
-    public IActionResult CommentForBlog(Guid blogId, string commentText)
+    public IActionResult CommentForBlog(ReactionActionDto reactionModel)
     {
-        var result = homeService.CommentForBlog(blogId, commentText);
+        var result = homeService.CommentForBlog(reactionModel.BlogId ?? Guid.NewGuid(), reactionModel.Comment ?? "");
 
         return Ok(new ResponseDto<object>()
         {
@@ -145,9 +146,9 @@ public class HomeController(IHomeService homeService) : Controller
     }
 
     [HttpPost("comment-for-comment")]
-    public IActionResult CommentForComment(Guid commentId, string commentText)
+    public IActionResult CommentForComment(ReactionActionDto reactionModel)
     {
-        var result = homeService.CommentForComment(commentId, commentText);
+        var result = homeService.CommentForComment(reactionModel.CommentId ?? Guid.NewGuid(), reactionModel.Comment ?? "");
 
         return Ok(new ResponseDto<object>()
         {
