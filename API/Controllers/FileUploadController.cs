@@ -1,76 +1,73 @@
-﻿using System.Net;
-using Application.Constants;
-using Application.DTOs.Upload;
-using Application.Interfaces;
-using Application.Interfaces.Base;
-using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
+using Application.Records;
 
 namespace Bislerium.Controllers;
 
 [ApiController]
 [Route("api/[controller]")]
-public class FileUploadController(IFileUploadService fileUploadService) : Controller
+public class FileUploadController(IWebHostEnvironment webHostEnvironment) : Controller
 {
     [HttpPost]
-    public IActionResult UploadFile([FromForm] FileUploadDto uploads)
+    public IActionResult UploadFile([FromForm] FileUploadRecord uploads)
     {
-        if (!int.TryParse(uploads.FilePath, out int filePathIndex))
-        {
-            return BadRequest(new ResponseDto<object>()
-            {
-                Message = "Invalid File Path.",
-                StatusCode = HttpStatusCode.BadRequest,
-                TotalCount = 0,
-                Status = "Bad Request",
-                Data = false
-            });
-        }
-
-        var filePaths = filePathIndex switch
-        {
-            1 => Constants.FilePath.UsersImagesFilePath,
-            2 => Constants.FilePath.BlogsImagesFilePath,
-            _ => ""
-        };
+        var filePaths = GetFilePath(uploads.FilePath);
 
         if (string.IsNullOrEmpty(filePaths))
         {
-            return BadRequest(new ResponseDto<object>()
-            {
-                Message = "Invalid File Path.",
-                StatusCode = HttpStatusCode.BadRequest,
-                TotalCount = 0,
-                Status = "Bad Request",
-                Data = false
-            });
+            return BadRequest(false);
         }
 
         const long maxSize = 3 * 1024 * 1024;
 
         if (uploads.Files.Any(upload => upload.Length > maxSize))
         {
-            return BadRequest(new ResponseDto<object>()
-            {
-                Message = "Invalid File Size.",
-                StatusCode = HttpStatusCode.BadRequest,
-                TotalCount = 0,
-                Status = "Bad Request",
-                Data = false
-            });
+            return BadRequest(false);
         }
 
-        var fileNames = uploads.Files.Select(file => fileUploadService.UploadDocument(filePaths, file)).ToList();
-
-        var response = new ResponseDto<List<string>>()
+        var fileNames = uploads.Files.Select(file =>
         {
-            Message = "File successfully uploaded.",
-            Data = fileNames,
-            StatusCode = HttpStatusCode.OK,
-            Status = "Success",
-            TotalCount = fileNames.Count
-        };
+            if (!Directory.Exists(Path.Combine(webHostEnvironment.WebRootPath, filePaths)))
+            {
+                Directory.CreateDirectory(Path.Combine(webHostEnvironment.WebRootPath, filePaths));
+            }
 
-        return Ok(response);
+            var uploadedDocumentPath = Path.Combine(webHostEnvironment.WebRootPath, filePaths);
+
+            var extension = Path.GetExtension(file.FileName);
+
+            var fileName = Guid.NewGuid().ToString() + DateTime.Now.ToString("dd-MM-yyyy:HH:mm:ss") + GetFileExtension(file);
+
+            using var stream = new FileStream(Path.Combine(uploadedDocumentPath, fileName), FileMode.Create);
+
+            file.CopyTo(stream);
+
+            return fileName;
+        }).ToList();
+
+        return Ok(fileNames);
+    }
+
+    private string GetFilePath(string filePath)
+    {
+        return filePath switch
+        {
+            "1" => "user-images",
+            "2" => "post-images",
+            _ => ""
+        };
+    }
+        
+    public static string GetFileExtension(IFormFile file)
+    {
+        var contentType = file.ContentType;
+
+        var parts = contentType.Split('/');
+        if (parts.Length == 2)
+        {
+            return parts[1];
+        }
+
+        var fileName = file.FileName;
+        return Path.GetExtension(fileName);
     }
 }

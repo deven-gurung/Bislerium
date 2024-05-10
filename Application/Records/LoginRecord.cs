@@ -1,8 +1,8 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace Application.DTOs.Account;
+namespace Application.Records;
 
-public class LoginDto
+public class LoginRecord
 {
     [Required]
     [EmailAddress]

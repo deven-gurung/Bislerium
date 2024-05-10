@@ -1,6 +1,6 @@
-﻿namespace Application.DTOs.Reaction;
+﻿namespace Application.Records;
 
-public class ReactionActionDto
+public class ReactionActionRecord
 {
     public Guid? BlogId { get; set; }
 

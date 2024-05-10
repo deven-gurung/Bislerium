@@ -1,6 +1,6 @@
-namespace Application.DTOs.Account;
+namespace Application.Records;
 
-public class RegisterDto
+public class RegisterRecord
 {
     public string Username { get; set; }
 

@@ -1,6 +1,6 @@
-namespace Application.DTOs.Profile;
+namespace Application.Records;
 
-public class ChangePasswordDto
+public class ChangePasswordRecord
 {
     public string CurrentPassword { get; set; }
     

@@ -1,8 +1,8 @@
 using Microsoft.AspNetCore.Http;
 
-namespace Application.DTOs.Upload;
+namespace Application.Records;
 
-public class FileUploadDto
+public class FileUploadRecord
 {
     public string FilePath { get; set; }
     

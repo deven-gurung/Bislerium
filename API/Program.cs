@@ -1,8 +1,7 @@
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
-using Application.Utilities;
-using Bislerium.Infrastructure.Dependency;
+using Infrastructure.Dependency;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.IdentityModel.Tokens;
@@ -53,8 +52,6 @@ services.AddSwaggerGen(c =>
 });
 
 services.AddCors();
-
-services.Configure<JWTSettings>(configuration.GetSection("JWT"));
 
 services.Configure<IdentityOptions>(options =>
     options.ClaimsIdentity.UserIdClaimType = ClaimTypes.NameIdentifier);

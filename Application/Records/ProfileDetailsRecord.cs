@@ -1,6 +1,6 @@
-namespace Application.DTOs.Profile;
+namespace Application.Records;
 
-public class ProfileDetailsDto
+public class ProfileDetailsRecord
 {
     public Guid UserId { get; set; }
     

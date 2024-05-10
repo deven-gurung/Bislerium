@@ -1,6 +1,6 @@
-﻿namespace Application.DTOs.Account;
+﻿namespace Application.Records;
 
-public class UserDto
+public class UserRecord
 {
     public Guid Id { get; set; }
     

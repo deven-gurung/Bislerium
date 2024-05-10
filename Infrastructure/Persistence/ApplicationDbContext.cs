@@ -1,5 +1,4 @@
 ﻿using System.Reflection;
-using Application.Constants;
 using Domain.Entities;
 using Domain.Entities.Identity;
 using Microsoft.AspNetCore.Identity;
@@ -233,9 +232,7 @@ public sealed class ApplicationDbContext : IdentityDbContext<User, Role, Guid, U
         
 		var passwordHash = new PasswordHasher<User>();
 		
-		const string password = Constants.Passwords.AdminPassword;
-        
-		superAdminUser.PasswordHash = passwordHash.HashPassword(superAdminUser, password);
+		superAdminUser.PasswordHash = passwordHash.HashPassword(superAdminUser, "HelloWorld@123");
         
 		builder.Entity<User>().HasData(superAdminUser);
 		builder.Entity<Role>().HasData(superAdminRole);
